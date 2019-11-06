@@ -9,4 +9,10 @@
 .SeasonEntry input[type=button] {
   width: 75px;
 }
+
+#RaceTable .race {
+  display: table;
+  margin: 25px;
+  border: 1px solid black;
+}
 /*# sourceMappingURL=styles.css.map */
