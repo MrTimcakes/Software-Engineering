@@ -1,1 +1,12 @@
+.SeasonEntry {
+  width: 170px;
+}
 
+.SeasonEntry input[type=number] {
+  width: 57px;
+}
+
+.SeasonEntry input[type=button] {
+  width: 75px;
+}
+/*# sourceMappingURL=styles.css.map */
