@@ -1,4 +1,4 @@
-let url = "http://ergast.com/api/f1/current/next.json";
+let url = "//ergast.com/api/f1/current/next.json";
 var test1, test2;
 
 var SeasonButton = document.getElementById("SeasonButton");
@@ -51,7 +51,7 @@ async function displaySeasonData(){
 }
 
 async function getSeasonData(season){
-  let requestURL = `http://ergast.com/api/f1/${season}.json`;
+  let requestURL = `//ergast.com/api/f1/${season}.json`;
   let request = await fetch(requestURL);
   let json = await request.json();
   return json;
