@@ -1,5 +1,5 @@
 .SeasonEntry {
-  width: 170px;
+  width: 325px;
 }
 
 .SeasonEntry input[type=number] {
@@ -7,12 +7,63 @@
 }
 
 .SeasonEntry input[type=button] {
-  width: 75px;
+  width: 110px;
 }
 
 #RaceTable .race {
   display: table;
   margin: 25px;
   border: 1px solid black;
+}
+
+.container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.dataSection {
+  width: 80%;
+  height: 65vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dataSection .weather {
+  width: 50%;
+}
+
+.dataSection .schedule {
+  width: 50%;
+  border: solid 1px black;
+  overflow-y: scroll;
+}
+
+.dataSection .schedule .race {
+  border: 1px solid black;
+  margin: 25px;
+}
+
+.social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  height: 65vh;
+}
+
+.social #TwitterEmbed {
+  width: 100%;
+  height: 350px;
+  overflow: scroll;
 }
 /*# sourceMappingURL=styles.css.map */
