@@ -1,19 +1,28 @@
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <form class="SeasonEntry">
-    <fieldset>
-      <legend>F1 Season</legend>
-      <input type="number" name="SeasonInput" id="SeasonInputID" min="1950" step="1" value="2019" required>
-      <input type="button" value="Get Data" id="SeasonButton" />
-    </fieldset>
-  </form>
-  <div id="RaceTable"></div>
-  <!-- <ul id="RaceTable"></ul> -->
-  <!-- <pre id="RaceTable"></pre> -->
-  <!-- <pre id="test"></div> -->
-  <script src="app.js"></script>
+    <div class="container">
+        <header>
+            <h1>F1</h1>
+        </header>
+        <section class="dataSection">
+            <div id="weatherDiv" class="weather">
+                <div id="customize-script-container"></div>
+                <!-- <script type='text/javascript' src='https://darksky.net/widget/default/42.360082,-71.05888/us12/en.js?width=100%&height=350&title=Yas Marina Circuit&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=undefined&fontFamily=Default&customFont=&units=us&htColor=333333&ltColor=C7C7C7&displaySum=yes&displayHeader=yes'></script> -->
+                <!-- <script type='text/javascript' src='https://darksky.net/widget/default/53.2276,-0.5394/us12/en.js?width=100%&height=350&title=Wow&textColor=333333&bgColor=transparent&transparency=true&skyColor=undefined&fontFamily=Default&customFont=&units=us&htColor=333333&ltColor=C7C7C7&displaySum=yes&displayHeader=yes'></script> -->
+            </div>
+            <div id="schedule" class="schedule">
+                Schedule
+            </div>
+        </section>
+        <section class="social">
+            <div id="TwitterEmbed">
+                <a class="twitter-timeline" href="https://twitter.com/F1?ref_src=twsrc%5Etfw">Tweets by F1</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </section>
+    </div>
+    <script src="app.js"></script>
 </body>
-<html>
+</html>
