@@ -82,29 +82,9 @@ async function getSeasonData(season){
   return json;
 }
 
-
-var loadJS = function(url, implementationCode, location){
-  //url is URL of external file, implementationCode is the code
-  //to be called from the file, location is the location to 
-  //insert the <script> element
-
-  var scriptTag = document.createElement('script');
-  scriptTag.src = url;
-
-  scriptTag.onload = implementationCode;
-  scriptTag.onreadystatechange = implementationCode;
-
-  location.appendChild(scriptTag);
-};
-var yourCodeToBeCalled = function(){
-//your code goes here
-}
-
-
 function displayWeather(parent, lat, long, name){
   // let url = `//forecast.io/embed/#lat=${lat}&lon=${long}&name=${name}&color=#00aaff`;
   let url = `//darksky.net/widget/default/${lat},${long}/us12/en.js?width=100%&height=350&title=${name}&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=undefined&fontFamily=Default&customFont=&units=us&htColor=333333&ltColor=C7C7C7&displaySum=yes&displayHeader=yes`;
-  // loadJS(url, ()=>{console.log("test")}, parent);
   let weather = document.createElement("script")
   weather.src = url;
   parent.appendChild(weather);
@@ -156,6 +136,7 @@ window.addEventListener('load', async function() {
   circuitLoc = next.MRData.RaceTable.Races[0].Circuit.Location
   circuitName = next.MRData.RaceTable.Races[0].Circuit.circuitName
   displayWeather( document.getElementById("weatherDiv"), circuitLoc.lat, circuitLoc.long, circuitName )
+  displayRaces(document.getElementById("upnext"), next)
   displayRaces(document.getElementById("schedule"), seasonData)
   //console.log( `//forecast.io/embed/#lat=${circuitLoc.lat}&lon=${circuitLoc.long}&name=${circuitName}&color=#00aaff` )
   
