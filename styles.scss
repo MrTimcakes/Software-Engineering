@@ -57,7 +57,9 @@ section{
     justify-content: space-between;
     width: 80%;
     height: 65vh;
+    min-height: 500px;
     margin-bottom: 25px;
+    overflow: hidden;
     // background-color: red;
     .left, .right{
         height: 65vh;
@@ -80,3 +82,10 @@ section{
         margin: 25px;
     }
 }
+
+#news{
+    overflow: hidden;
+    div{
+      margin-bottom: 5px;
+    }
+  }
