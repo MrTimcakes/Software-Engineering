@@ -128,7 +128,7 @@ window.addEventListener('load', async function() {
   // SeasonButton.addEventListener("click", displaySeasonData, false);
   // nextCircuitButton.addEventListener("click", displayNextCircuitData, false);
   // SeasonButton.click();
-  season = "current";
+  season = new URLSearchParams(window.location.search).get("season") || "current";
   seasonData = await getSeasonData(season)
   //console.log(seasonData)
   next = await getSeasonData(season+"/next")
