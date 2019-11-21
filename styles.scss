@@ -1,3 +1,6 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
 
 .SeasonEntry{
     width:325px;
@@ -34,16 +37,7 @@
     .weather{
         width: 50%;
     }
-    .schedule{
-        width: 50%;
-        border: solid 1px black;
-        overflow-y: scroll;
-        .race{
-            border: 1px solid black;
-            // display: flex-inline;
-            margin: 25px;
-        }
-    }
+    
 }
 
 .social{
@@ -52,7 +46,37 @@
     height: 65vh;
     #TwitterEmbed{
         width: 100%;
-        height: 350px;
-        overflow: scroll;
+        height: 100%;
+        // overflow: scroll;
+        overflow-y: scroll;
+    }
+}
+
+section{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    height: 65vh;
+    margin-bottom: 25px;
+    // background-color: red;
+    .left, .right{
+        height: 65vh;
+        width: 50%;
+    }
+}
+
+.upcoming{
+    height: 50%;
+}
+
+.schedule{
+    // width: 50%;
+    height: 100%;
+    border: solid 1px black;
+    overflow-y: scroll;
+    .race{
+        border: 1px solid black;
+        // display: flex-inline;
+        margin: 25px;
     }
 }

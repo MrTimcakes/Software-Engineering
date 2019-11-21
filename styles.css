@@ -1,3 +1,7 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .SeasonEntry {
   width: 325px;
 }
@@ -42,17 +46,6 @@
   width: 50%;
 }
 
-.dataSection .schedule {
-  width: 50%;
-  border: solid 1px black;
-  overflow-y: scroll;
-}
-
-.dataSection .schedule .race {
-  border: 1px solid black;
-  margin: 25px;
-}
-
 .social {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -63,7 +56,39 @@
 
 .social #TwitterEmbed {
   width: 100%;
-  height: 350px;
-  overflow: scroll;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  height: 65vh;
+  margin-bottom: 25px;
+}
+
+section .left, section .right {
+  height: 65vh;
+  width: 50%;
+}
+
+.upcoming {
+  height: 50%;
+}
+
+.schedule {
+  height: 100%;
+  border: solid 1px black;
+  overflow-y: scroll;
+}
+
+.schedule .race {
+  border: 1px solid black;
+  margin: 25px;
 }
 /*# sourceMappingURL=styles.css.map */
