@@ -119,26 +119,48 @@ function displayRaces(parent, data){
   }
 }
 
+async function getNews(query){
+  querySafe = encodeURI(query);
+  let requestURL = `//newsapi.org/v2/everything?q=${querySafe}&sortBy=popularity&apiKey=7c85c7b63d8348d89b8f4d8450980ed1`;
+  let request = await fetch(requestURL);
+  let json = await request.json();
+  return json;
+}
+
+async function displayNews(parent, query){
+  newsData = await getNews(query);
+  console.log(newsData)
+  //document.getElementById("newsTitle").textContent = `${query} News:`
+  let headerEle = document.createElement("h2");
+  headerEle.textContent = `${query} News:`
+  parent.appendChild(headerEle);
+  for(i in newsData.articles){
+    let newsObject = document.createElement("div")
+    let newsLink = document.createElement("a");
+    let newsDesc = document.createElement("span");
+    newsLink.textContent = newsData.articles[i].title;
+    newsLink.href = newsData.articles[i].url;
+    newsDesc.textContent = " - " + newsData.articles[i].description;
+    newsObject.appendChild(newsLink)
+    newsObject.appendChild(newsDesc)
+    parent.appendChild(newsObject);
+  }
+}
+
 window.addEventListener('load', async function() {
-  console.log('All assets are loaded')
-  // var SeasonInput = document.getElementById("SeasonInputID");
-  // var SeasonButton = document.getElementById("SeasonButton");
-  // var nextCircuitButton = document.getElementById("nextCircuitButton");
-  // SeasonInput.addEventListener("keyup", function(e) { if (e.keyCode === 13) {e.preventDefault();SeasonButton.click();} });
-  // SeasonButton.addEventListener("click", displaySeasonData, false);
-  // nextCircuitButton.addEventListener("click", displayNextCircuitData, false);
-  // SeasonButton.click();
   season = new URLSearchParams(window.location.search).get("season") || "current";
   seasonData = await getSeasonData(season)
-  //console.log(seasonData)
   next = await getSeasonData(season+"/next")
   date = next.MRData.RaceTable.Races[0].date;
   circuitLoc = next.MRData.RaceTable.Races[0].Circuit.Location
   circuitName = next.MRData.RaceTable.Races[0].Circuit.circuitName
+
   displayWeather( document.getElementById("weatherDiv"), circuitLoc.lat, circuitLoc.long, circuitName )
-  displayRaces(document.getElementById("upnext"), next)
-  displayRaces(document.getElementById("schedule"), seasonData)
-  //console.log( `//forecast.io/embed/#lat=${circuitLoc.lat}&lon=${circuitLoc.long}&name=${circuitName}&color=#00aaff` )
+  displayRaces( document.getElementById("upnext"), next )
+  displayRaces( document.getElementById("schedule"), seasonData )
   
-  console.log(date)
+  // News
+  displayNews(document.getElementById("news"), next.MRData.RaceTable.Races[0].raceName);
+  
+  console.log(next)
 })
